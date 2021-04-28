@@ -25,6 +25,10 @@ public class Order {
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<>();
 
+    @OneToOne
+    @JoinColumn(name = "delivery_id")
+    private Delivery delivery;
+
 
     //연관관계 편의 메소드
     public void addOrderItem(OrderItem orderItem) {
